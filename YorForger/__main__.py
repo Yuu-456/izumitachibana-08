@@ -90,32 +90,36 @@ START_MSG = "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>"
 START_IMG = "https://telegra.ph//file/f4e28ef63d3f7c04ac5ad.jpg"
     
 PM_START_TEXT = """
-────「 [{}](https://telegra.ph/file/a15eb346fec9a0b1b2696.mp4) 」────
-Heyyo `{}`,  here to help,
-*I am an Anime themed advance group management bot with a lot of awesome Features*
+ Konichiwa {}.
+*ʙᴏᴋᴜ ᴡᴀ ʜᴏʀɪ-ᴋʏᴏᴜᴋᴏ ɴᴏ ᴋᴀʀᴇꜱʜɪ ᴅᴇꜱᴜ
+━━━━━━━━━━━━━━━━━━━━━
+ʙᴏᴋᴜ ɴᴏ [Iȥυɱι Mιყαɱυɾα](http://t.me/MiyamuraXProBot) ,
+ᴀɴɪᴍᴇ-ᴛʜᴇᴍᴇ ʙᴀꜱᴇᴅ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴀɴᴅ ʙᴏʏꜰʀɪᴇɴᴅ ᴏꜰ ʜᴏʀɪ ᴋʏᴏᴜᴋᴏ ✨
 ┏━━━━━━━━━━━━━━━━━━━━
-┣♡ *Uptime:* `{}`
-➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
-┣♡ `{}` *users, across* `{}` *chats.*
-┗━━━━━━━━━━━━━━━━━━━━
-*Try The Help Buttons Below To Know My Abilities And Charm* ××
+× *ᴀᴡᴀᴋᴇ ꜱɪɴᴄᴇ:* {}
+× {} *ᴛᴇᴀᴍᴍᴀᴛᴇꜱ. ᴀᴄʀᴏꜱꜱ* {} *ɢʀᴏᴜᴘ ᴄʜᴀᴛꜱ.*
+┗━━━━━━━━━━━━━━━━━━━━ 
+[ꜱᴜᴘᴘᴏʀᴛ](https://t.me/izumi_supersupport) | [ᴜᴘᴅᴀᴛᴇꜱ](https://t.me/izumi_superupdates)
+━━━━━━━━━━━━━━━━━━━━━
+ᴘᴏᴡᴇʀᴇᴅ ʙʏ :  [V๏ɪ፝֟𝔡 ɴᴇᴛᴡᴏʀᴋ](https://t.me/voidxnetwork)
+*ᴏᴘᴇɴ /ʜᴇʟᴘ ᴛᴏ ᴋɴᴏᴡ ᴡʜᴀᴛ ɪ ᴀᴍ ᴄᴀᴘᴀʙʟᴇ ᴏꜰ !*[.](https://telegra.ph/file/a480ee670f5c08e167781.mp4)××
 """
 
 GROUP_START_TEXT = """
 I'm awake already!
-Haven't slept since: {}
+Have been thinking about hori since: {}
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="💖 ADD ME IN YOUR GROUP",url="http://t.me/Yor_forger_spyxfamily_bot?startgroup=true"),
+            text="💖 ADD ME IN YOUR GROUP",url="http://t.me/miyamuraxprobot?startgroup=true"),
     ],
     [
         InlineKeyboardButton(
-            text="⚙️ Support", url=f"https://t.me/Yorsansupport"),                    
+            text="⚙️ Support", url=f"https://t.me/izumixsupport"),                    
         InlineKeyboardButton(
-            text="🔐 Help", callback_data="help_back"
+            text=" Capabilities", callback_data="help_back"
         ),
     ],
 ]
@@ -250,7 +254,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
                 update.effective_message.reply_photo(
-            START_IMG, caption="ʏᴏ, Yor ʜᴇʀᴇ ᴛᴏ ʜᴇʟᴘ!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+            START_IMG, caption="ʏᴏ, Izumi Miyamura \nʜᴇʀᴇ ᴛᴏ ʜᴇʟᴘ!\n<b>Thinking about hori since:</b> <code>{}</code>".format(
                 uptime,
             ),
             parse_mode=ParseMode.HTML,
