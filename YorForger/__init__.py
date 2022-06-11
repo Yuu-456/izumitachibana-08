@@ -4,8 +4,6 @@ import logging
 import os
 import sys
 import time
-
-import spamwatch
 import telegram.ext as tg
 from pyrogram import Client, errors
 from redis import StrictRedis
@@ -120,8 +118,6 @@ if ENV:
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", None)
     API_ID = int(os.environ.get("API_ID", None))
     API_HASH = os.environ.get("API_HASH", None)
-    SPAMWATCH = os.environ.get("SPAMWATCH_API", None)
-    SPAMMERS = os.environ.get("SPAMMERS", None)
 
 else:
     from Yor.config import Development as Config
@@ -195,8 +191,6 @@ else:
     SUPPORT_CHAT = Config.SUPPORT_CHAT
     API_HASH = Config.API_HASH
     API_ID = Config.API_ID
-    SPAMWATCH = Config.SPAMWATCH_API
-    SPAMMERS = Config.SPAMMERS
 
 # Dont Remove This!!!
 DEV_USERS.add(OWNER_ID)
@@ -209,12 +203,6 @@ SUPPORT_USERS.add(5128342147)
 SUPPORT_USERS.add(1835783426)
 SUPPORT_USERS.add(5147265129)
 
-# Pass if SpamWatch token not set.
-if SPAMWATCH is None:
-    spamwtc = None
-    LOGGER.warning("[Yor] Invalid spamwatch api")
-else:
-    spamwtc = None
 
 REDIS = StrictRedis.from_url(REDIS_URL, decode_responses=True)
 try:

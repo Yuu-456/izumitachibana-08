@@ -31,7 +31,6 @@ from YorForger import (
     OWNER_ID,
     WHITELIST_USERS,
     SUPPORT_USERS,
-    spamwtc,
     dispatcher,
 )
 from YorForger.modules.helper_funcs.chat_status import (
@@ -183,10 +182,6 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
         welcome_bool = True
         media_wel = False
 
-        if spamwtc is not None:
-            sw_ban = spamwtc.get_ban(new_mem.id)
-            if sw_ban:
-                return
 
         reply = update.message.message_id
         cleanserv = sql.clean_service(chat.id)
@@ -576,11 +571,6 @@ def left_member(update: Update, context: CallbackContext):  # sourcery no-metric
         left_mem = update.effective_message.left_chat_member
         if left_mem:
 
-            # Thingy for spamwatched users
-            if spamwtc is not None:
-                sw_ban = spamwtc.get_ban(left_mem.id)
-                if sw_ban:
-                    return
 
             # Dont say goodbyes to gbanned users
             if is_user_gbanned(left_mem.id):
